@@ -63,6 +63,15 @@ return [
             ]) : [],
         ],
 
+        'ess' => [
+            'driver' => 'mysql',
+            'host' => env('DB_B_HOST', '127.0.0.1'),
+            'port' => env('DB_B_PORT', '3306'),
+            'database' => env('DB_B_DATABASE', 'ess'),
+            'username' => env('DB_B_USERNAME', 'root'),
+            'password' => env('DB_B_PASSWORD', ''),
+        ],
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),

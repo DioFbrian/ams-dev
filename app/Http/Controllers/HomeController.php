@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
+use App\Models\Email;
+use App\Models\Holder;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Laptop;
 
 class HomeController extends Controller
 {
@@ -25,8 +29,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        
-        return view('home');
+        $LaptopCount = Laptop::count();
+        $EmailCount = Email::count();
+        $CardCount = Card::count();
+        $HolderCount = Holder::count();
+
+        return view('home', ['LaptopCount' => $LaptopCount,'EmailCount' => $EmailCount, 'CardCount' => $CardCount, 'HolderCount' => $HolderCount ]);
     }
 
 }

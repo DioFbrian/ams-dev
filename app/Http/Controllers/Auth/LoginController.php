@@ -46,9 +46,9 @@ class LoginController extends Controller
      * @param  mixed  $user
      * @return mixed
      */
-    protected function authenticated(Request $request, $user)
-    {
-        $roles = $user->role_id()->pluck('role_name')->toArray();
-        session()->put('allowed_roles', $roles);
-    }
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     $roles = $user->role_id()->pluck('role_name')->toArray();
+    //     session()->put('allowed_roles', $roles);
+    // }
 }
